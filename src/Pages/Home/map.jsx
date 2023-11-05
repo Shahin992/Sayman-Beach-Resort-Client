@@ -11,10 +11,10 @@ const Map = () => {
     console.log(todo);
     return (
         
-        <div className="p-3">
+        <div className="p-4 w-full">
 
-<div className="flex flex-col md:flex-row w-[1200px] mx-auto gap-20 justify-between my-10">
-                <div className="md:w-1/2">
+<div className="flex flex-col md:flex-row max-w-[1200px] mx-auto gap-20 justify-between my-10">
+                <div className="md:w-1/2 w-full">
                 <div style={{ width: "100%" }}>
       <iframe
         width="100%"
@@ -31,15 +31,15 @@ const Map = () => {
                 
 
                 </div>
-                <div className="md:w-1/2">
+                <div className="md:w-1/2 w-full">
                     <h3 className="text-4xl font-semibold mb-8 text-red-600">Things to do</h3>
-                    <p className="w-[60%] text-lg font-medium">Stay at Sayaman and enjoy the following activities at our private beach:</p>
+                    <p className="md:w-[60%] w-full text-lg font-medium">Stay at Sayaman and enjoy the following activities at our private beach:</p>
                     <div >
                        {
                         todo.map(item => { 
                             return (
 
-                                <div className="flex w-1/2 items-center justify-between border-b-2">
+                                <div className="flex md:w-1/2 w-full items-center justify-between border-b-2">
                                      <h1 className="mb-2 text-xl">{item.name}</h1>
                                      <img className="my-3" src={item.image} alt="" />
                                 </div>
