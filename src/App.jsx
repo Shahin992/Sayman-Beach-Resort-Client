@@ -1,4 +1,4 @@
-import Navbar from "./Pages/Navbar/Navbar"
+
 
 
 function App() {
@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-    <Navbar></Navbar>
+    
       
      
       
