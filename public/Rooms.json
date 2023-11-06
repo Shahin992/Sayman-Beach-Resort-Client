@@ -1,0 +1,67 @@
+[
+    {
+        "title": "Super Deluxe Twin",
+        "image": "https://sayemanresort.com/wp-content/uploads/2019/10/Deluxe-Twin.jpg",
+        "price": 12500,
+        "total_review": 4,
+        "description": "Experience pure luxury with our spacious suite offering stunning ocean views and top-notch amenities.",
+        "availability": "Available",
+        "room_size": "475 sq. ft",
+        "amenities": [
+            "Single Room With One Spacious Balcony",
+            "Twin Bed, Bathroom With Luxury Fittings"
+        ]
+    },
+    {
+        "title": "Infinity Sea View",
+        "image": "https://sayemanresort.com/wp-content/uploads/2019/10/Deluxe-King.jpg",
+        "price": 20000,
+        "total_review": 3,
+        "description": "A comfortable double room perfect for a relaxing stay with a partner or friend.",
+        "availability": "Available",
+        "room_size": "500 sq. ft",
+        "amenities": [
+            "Single Room With One Spacious Balcony​",
+            "Sea View King Bed, Bathroom With Luxury Fittings"
+        ]
+    },
+    {
+        "title": "Junior Suite",
+        "image": "https://sayemanresort.com/wp-content/uploads/2019/10/Junior-Suite.jpg",
+        "price": 24000,
+        "total_review": 2,
+        "description": "Spacious family suite with separate bedrooms and a living area for a comfortable family vacation.",
+        "availability": "Available",
+        "room_size": "1000 sq. ft",
+        "amenities": [
+            "One Bed Room, 1.5 Bath, Living/Dining & Kitchenette",
+            "Sea View With Two Spacious Balconies"
+        ]
+    },
+    {
+        "title": "Panorama Ocean Suite",
+        "image": "https://sayemanresort.com/wp-content/uploads/2019/10/Panorama-Ocean-Sutie.jpg",
+        "price": 48000,
+        "total_review": 2,
+        "description": "A simple and affordable single room for solo travelers looking for a comfortable stay.",
+        "availability": "Available",
+        "room_size": "1500 Sft.",
+        "amenities": [
+            "Two Bed Room, 2.5 Bath, Living/Dining & Kitchenette",
+            "180-Degree Sea View With Two Large Balconies"
+        ]
+    },
+    {
+        "title": "Super Deluxe King",
+        "image": "https://sayemanresort.com/wp-content/uploads/2019/10/Infinity-Suite.jpg",
+        "price": 11000,
+        "total_review": 3,
+        "description": "The ultimate in luxury accommodations, our penthouse suite offers breathtaking city views and unparalleled comfort.",
+        "availability": "Available",
+        "room_size": "475 sq. ft",
+        "amenities": [
+            "Single Room With One Spacious Balcony",
+            "King Bed, Bathroom With Luxury Fittings"
+        ]
+    }
+]

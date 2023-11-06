@@ -18,7 +18,7 @@ const SpecialOffer = () => {
                             <>
                            <div className="flex flex-col justify-center items-center mb-10">
                             <h3 className="text-2xl font-semibold text-blue-950  mb-2-5">{item.package_name}</h3>
-                            <p className="text-xl font-medium mb-2">{item.title}</p>
+                            <p className="text-xl font-medium mb-5">{item.title}</p>
                             <img className="w-[95%]" src={item.image} alt="" />
                             </div>
                             
