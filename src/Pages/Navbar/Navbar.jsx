@@ -3,8 +3,9 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
     return (
-        <div className="max-w[1200px] mx-auto">
-            <div className="navbar bg-[#2a2b33] text-white">
+      <div className="sticky top-0 z-50">
+          <div className="max-w[1200px]  mx-auto">
+            <div className="navbar bg-[#2a2b33]  text-white">
   <div className="navbar-start">
     <div className="dropdown z-10">
       <label tabIndex={0} className="z-10 btn btn-ghost lg:hidden">
@@ -37,6 +38,34 @@ const Navbar = () => {
                     }
                   >
                     Rooms
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/register"
+                    className={({ isActive, isPending }) =>
+                      isPending
+                        ? "pending"
+                        : isActive
+                        ? "text-white bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-lg font-bold underline"
+                        : ""
+                    }
+                  >
+                    Register
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/login"
+                    className={({ isActive, isPending }) =>
+                      isPending
+                        ? "pending"
+                        : isActive
+                        ? "text-white bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-lg font-bold underline"
+                        : ""
+                    }
+                  >
+                    Login
                   </NavLink>
                 </li>
         
@@ -76,6 +105,34 @@ const Navbar = () => {
                     Rooms
                   </NavLink>
                 </li>
+                <li>
+                  <NavLink
+                    to="/register"
+                    className={({ isActive, isPending }) =>
+                      isPending
+                        ? "pending"
+                        : isActive
+                        ? "text-white bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-lg font-bold underline"
+                        : ""
+                    }
+                  >
+                    Register
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/login"
+                    className={({ isActive, isPending }) =>
+                      isPending
+                        ? "pending"
+                        : isActive
+                        ? "text-white bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-lg font-bold underline"
+                        : ""
+                    }
+                  >
+                    Login
+                  </NavLink>
+                </li>
    
     
     </ul>
@@ -86,6 +143,7 @@ const Navbar = () => {
 </div>
             
         </div>
+      </div>
     );
 };
 

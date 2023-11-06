@@ -17,7 +17,8 @@ const Slider = () => {
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
     >
-      <SwiperSlide>    <div className="hero min-h-screen" style={{backgroundImage: 'url(https://seagullhotelbd.com/wp-content/uploads/2023/10/New-web-pic-for-seagull-7-min.png)'}}>
+      <SwiperSlide>    
+        <div className="hero min-h-screen" style={{backgroundImage: 'url(https://seagullhotelbd.com/wp-content/uploads/2023/10/New-web-pic-for-seagull-7-min.png)'}}>
   <div className="hero-content bg-opacity-10"></div>
   <div className="">
   <div className=" flex justify-left items-start flex-col">
@@ -26,7 +27,8 @@ const Slider = () => {
       <button className="btn text-white font-semibold btn-success">Book Now</button>
     </div>
   </div>
-</div></SwiperSlide>
+</div>
+</SwiperSlide>
       <SwiperSlide>
       <div className="hero min-h-screen" style={{backgroundImage: 'url(https://i.ibb.co/WFxnBsQ/pexels-nastyasensei-376531.jpg)'}}>
   <div className="bg-opacity-10"></div>
