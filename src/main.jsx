@@ -8,6 +8,7 @@ import Home from './Pages/Home/Home.jsx'
 import Rooms from './Pages/Rooms/Rooms.jsx'
 import Login from './Pages/Login/Login.jsx'
 import Register from './Pages/Register/Register.jsx'
+import AuthProvider from './Pages/Firebase/AuthProvider.jsx'
 const router = createBrowserRouter([
   {
     path: "/",
@@ -39,7 +40,8 @@ const router = createBrowserRouter([
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+   <AuthProvider> 
     <RouterProvider router={router} />
-  </React.StrictMode>,
+    </AuthProvider>
+ 
 )

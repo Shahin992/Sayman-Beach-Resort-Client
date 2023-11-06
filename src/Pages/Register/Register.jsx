@@ -1,8 +1,37 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "../Firebase/AuthProvider";
+import Swal from "sweetalert2";
 
 const Register = () => {
+    const {  googleLogin } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+    const googleBtn = () => {
+        googleLogin()
+          .then((result) => {
+            console.log(result.user);
+    
+            Swal.fire("Good job!", "Account Created Successfully!", "success");
+    
+            navigate(location?.state ? location.state : "/");
+          })
+          .catch((error) => {
+            console.log(error.message);
+            Swal.fire({
+              icon: "error",
+              title: "Oops...",
+              text: "Something went wrong! Please check your email and password",
+            });
+          });
+      };
+
+
+
+
     return (
         <div>
     
@@ -195,10 +224,11 @@ const Register = () => {
           </div>
            <div>
             <button
+            onClick={googleBtn}
              
               className="flex justify-center items-center  w-full bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 mt-4 py-2 rounded-2xl text-white font-semibold mb-2 "
             >
-               <FcGoogle className="mr-5 text-2xl"></FcGoogle> 
+               <FcGoogle  className="mr-5 text-2xl"></FcGoogle> 
               Sign Up with google
             </button>
             <button
