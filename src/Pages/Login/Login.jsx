@@ -9,7 +9,7 @@ import Swal from "sweetalert2";
 
 
 const Login = () => {
-    const {  googleLogin} = useContext(AuthContext);
+    const {  googleLogin, githubLogin} = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -33,6 +33,32 @@ const Login = () => {
         });
       });
   };
+
+  const githubBtn = () => {
+    githubLogin()
+      .then((result) => {
+        console.log(result.user);
+        fetch("https://server-site-taupe.vercel.app/users", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(result.user),
+        });
+        Swal.fire("Good job!", "Log in Successfully!", "success");
+        navigate(location?.state ? location.state : "/");
+      })
+
+      .catch((error) => {
+        console.log(error.message);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong! Please check your email and password",
+        });
+      });
+  };
+
 
 
 
@@ -134,6 +160,7 @@ const Login = () => {
               <FcGoogle  className="mr-5 text-2xl"></FcGoogle>Sign in with google
             </button>
             <button
+            onClick={githubBtn}
               
               className="flex justify-center items-center block w-full bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 mt-4 py-2 rounded-2xl text-white font-semibold mb-2 "
             >
