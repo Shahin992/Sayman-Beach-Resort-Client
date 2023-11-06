@@ -5,8 +5,18 @@ const Rooms = () => {
     const roomData = useLoaderData();
     console.log(roomData);
   return (
-    <div>
-      <div className="grid grid-cols-2 items-center gap-16 justify-center my-10 px-10">
+    <div className="max-w-[1280px] mx-auto">
+        <div className="flex justify-end items-end mt-10">
+            <p className="text-2xl font-semibold text-blue-950">Sort by Price: </p>
+            <select id="sortSelect">
+
+        <option >Sort Select</option>
+        <option >Low to High</option>
+        <option >High to Low</option>
+      </select>
+            
+        </div>
+      <div className="grid grid-cols-1 lg:grid-cols-2  items-center gap-16 justify-center my-10 ">
       {
         roomData.map(item => {
             return (
@@ -22,7 +32,7 @@ const Rooms = () => {
                     </div>
         
                     <div className="absolute opacity-0 transition-opacity group-hover:relative group-hover:opacity-100">
-                    <img className="h-full w-full" src="https://sayemanresort.com/wp-content/uploads/2019/10/Panorama-Ocean-Sutie.jpg" alt="" />
+                    <img className="h-full w-full" src={item.image} alt="" />
              
                     </div>
                   </div>
