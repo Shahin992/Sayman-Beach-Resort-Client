@@ -2,66 +2,112 @@
     {
         "title": "Super Deluxe Twin",
         "image": "https://sayemanresort.com/wp-content/uploads/2019/10/Deluxe-Twin.jpg",
-        "price": 12500,
-        "total_review": 4,
+        "price": 6500,
+        "total_review": 2,
+        "rating": 5,
         "description": "A 475 sq. ft. room with modern décor and everyday amenities can be a perfect getaway. Well-appointed Super Deluxe rooms offer excellent amenities including a private balcony are included in every room.",
         "availability": "Available",
         "room_size": "475 sq. ft",
         "amenities": [
             "Single Room With One Spacious Balcony",
-            "Twin Bed, Bathroom With Luxury Fittings"
+            "Twin Bed, Bathroom With Luxury Fittings",
+            "475 Sft"
+        ],
+        "images":[
+            "https://sayemanresort.com/wp-content/uploads/elementor/thumbs/super-deluxe-king1-ohn1gaitremp5t9b6cp8dxfcnu4l8466u44uk351oi.jpg",
+            "https://sayemanresort.com/wp-content/uploads/elementor/thumbs/super-deluxe-king3-ohn1gaitremp5t9b6cp8dxfcnu4l8466u44uk351oi.jpg",
+            "https://sayemanresort.com/wp-content/uploads/elementor/thumbs/super-deluxe-king2-ohn1gaitremp5t9b6cp8dxfcnu4l8466u44uk351oi.jpg"
         ]
     },
     {
         "title": "Infinity Sea View",
         "image": "https://sayemanresort.com/wp-content/uploads/2019/10/Deluxe-King.jpg",
-        "price": 20000,
-        "total_review": 3,
+        "price": 8500,
+        "total_review": 1,
+        "rating": 4,
         "description": "Best sea view hotel in Cox’s Bazar offering you a generous 500 square feet of space, Infinity Sea View Rooms have a King bed for a refreshing and restful night’s sleep. Rooms have a spacious balcony that opens to a pool view and best sea view in Cox’s bazar. Also rooms all equipped with modern amenities such as LCD TVs, central air conditioning, central water heating system, room controller etc.",
         "availability": "Available",
         "room_size": "500 sq. ft",
         "amenities": [
             "Single Room With One Spacious Balcony​",
-            "Sea View King Bed, Bathroom With Luxury Fittings"
+            "Sea View King Bed, Bathroom With Luxury Fittings",
+            "500 Sft",
+            "Occupancy for 2 adults"
+
+            
+        ],
+        "images":[
+            "https://sayemanresort.com/wp-content/uploads/elementor/thumbs/infinity-ocean-suite3-ohn1gaitremp5t9b6cp8dxfcnu4l8466u44uk351oi.jpg",
+            "https://sayemanresort.com/wp-content/uploads/elementor/thumbs/infinity-ocean-suite4-ohn1gaitremp5t9b6cp8dxfcnu4l8466u44uk351oi.jpg",
+            "https://sayemanresort.com/wp-content/uploads/elementor/thumbs/infinity-ocean-suite2-ohn1gaitremp5t9b6cp8dxfcnu4l8466u44uk351oi.jpg"
         ]
     },
     {
         "title": "Junior Suite",
         "image": "https://sayemanresort.com/wp-content/uploads/2019/10/Junior-Suite.jpg",
-        "price": 24000,
+        "price": 12400,
         "total_review": 2,
+        "rating": 5,
         "description": "A suit with an additional meeting space keeps your vacation uninterrupted. All our suits are ornamented with the magnificent view of the beautiful sea view of Bay of Bengal.",
         "availability": "Available",
         "room_size": "1000 sq. ft",
         "amenities": [
             "One Bed Room, 1.5 Bath, Living/Dining & Kitchenette",
-            "Sea View With Two Spacious Balconies"
+            "Sea View With Two Spacious Balconies",
+            "1000 Sft.",
+            "Ocean View with two spacious balconies",
+            "Occupancy for 2 adults"
+        ],
+        "images" : [
+            "https://sayemanresort.com/wp-content/uploads/elementor/thumbs/junior-suite1-ohn1gaitremp5t9b6cp8dxfcnu4l8466u44uk351oi.jpg",
+            "https://sayemanresort.com/wp-content/uploads/elementor/thumbs/junior-suite3-ohn1gaitremp5t9b6cp8dxfcnu4l8466u44uk351oi.jpg",
+            "https://sayemanresort.com/wp-content/uploads/elementor/thumbs/junior-suite2-ohn1gaitremp5t9b6cp8dxfcnu4l8466u44uk351oi.jpg"
         ]
     },
     {
         "title": "Panorama Ocean Suite",
         "image": "https://sayemanresort.com/wp-content/uploads/2019/10/Panorama-Ocean-Sutie.jpg",
-        "price": 48000,
-        "total_review": 2,
+        "price": 14500,
+        "total_review": 0,
+        "rating": 4,
         "description": "A luxurious 2 bedroom suit perfect for family & friends with the 180 degree view of world’s longest unbroken beach. The ceiling height window from the living room gives you an excellent opportunity to indulge with Sun, Sand & Sea.",
         "availability": "Available",
         "room_size": "1500 Sft.",
         "amenities": [
             "Two Bed Room, 2.5 Bath, Living/Dining & Kitchenette",
-            "180-Degree Sea View With Two Large Balconies"
+            "180-Degree Sea View With Two Large Balconies",
+            "1500 Sft.",
+            "Full Kitchenette with wet bar.",
+            "Large Master Bedroom with King Size Bed",
+            "Occupancy for 4 adults",
+            "Guest Bedroom with two twin bed.",
+            "Large Bathroom with Bathtub & Shower overlooking the ocean."
+
+        ],
+        "images" :[
+            "https://sayemanresort.com/wp-content/uploads/elementor/thumbs/panorama-ocean-suite1-ohn1gaitremp5t9b6cp8dxfcnu4l8466u44uk351oi.jpg",
+            "https://sayemanresort.com/wp-content/uploads/elementor/thumbs/panorama-ocean-suite2-ohn1gaitremp5t9b6cp8dxfcnu4l8466u44uk351oi.jpg",
+            "https://sayemanresort.com/wp-content/uploads/elementor/thumbs/panorama-ocean-suite3-2-ohn1gaitremp5t9b6cp8dxfcnu4l8466u44uk351oi.jpg"
         ]
     },
     {
         "title": "Super Deluxe King",
         "image": "https://sayemanresort.com/wp-content/uploads/2019/10/Infinity-Suite.jpg",
-        "price": 11000,
-        "total_review": 3,
+        "price": 7000,
+        "total_review": 1,
+        "rating": 5,
         "description": "A 475 sq. ft. room with modern décor and everyday amenities can be a perfect getaway. Well-appointed Super Deluxe rooms offer excellent amenities including a private balcony are included in every room.",
         "availability": "Available",
         "room_size": "475 sq. ft",
         "amenities": [
             "Single Room With One Spacious Balcony",
-            "King Bed, Bathroom With Luxury Fittings"
+            "King Bed, Bathroom With Luxury Fittings",
+            "475 Sft."
+        ],
+        "images" :[
+            "https://sayemanresort.com/wp-content/uploads/elementor/thumbs/super-deluxe-king1-ohn1gaitremp5t9b6cp8dxfcnu4l8466u44uk351oi.jpg",
+            "https://sayemanresort.com/wp-content/uploads/elementor/thumbs/super-deluxe-king2-ohn1gaitremp5t9b6cp8dxfcnu4l8466u44uk351oi.jpg",
+            "https://sayemanresort.com/wp-content/uploads/elementor/thumbs/super-deluxe-king3-ohn1gaitremp5t9b6cp8dxfcnu4l8466u44uk351oi.jpg"
         ]
     }
 ]

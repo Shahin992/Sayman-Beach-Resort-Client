@@ -9,6 +9,7 @@ import Rooms from './Pages/Rooms/Rooms.jsx'
 import Login from './Pages/Login/Login.jsx'
 import Register from './Pages/Register/Register.jsx'
 import AuthProvider from './Pages/Firebase/AuthProvider.jsx'
+import RoomDetails from './Pages/Rooms/RoomDetails.jsx'
 const router = createBrowserRouter([
   {
     path: "/",
@@ -22,7 +23,14 @@ const router = createBrowserRouter([
       {
         path: "/rooms",
         element: <Rooms></Rooms>,
-        loader: () => fetch('/Rooms.json')
+        loader: () => fetch('http://localhost:5000/rooms/')
+      },
+      {
+        path :"/rooms/:id",
+        element : <RoomDetails></RoomDetails>,
+        loader: ({params})=> fetch(`http://localhost:5000/rooms/${params.id}`)
+
+
       },
       {
         path: "/login",

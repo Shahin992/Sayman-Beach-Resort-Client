@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-key */
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const Rooms = () => {
     const roomData = useLoaderData();
@@ -37,9 +37,10 @@ const Rooms = () => {
     {
       roomData.map(item => {
           return (
-              <div className="bg-slate-200 p-4 rounded-2xl">
+            <Link to={`/rooms/${item._id}`}>
+               <div className="bg-slate-200 p-4 rounded-2xl">
               <p className="text-2xl font-semibold text-blue-950 text-center mb-5" >{item.title}</p>
-             <a href="" className="group relative block h-64 sm:h-80 lg:h-96">
+             <div  className="group relative block h-64 sm:h-80 lg:h-96">
                 <span className="absolute inset-0 border-2 border-dashed border-black"></span>
       
                 <div className="relative flex h-full w-full transform items-end border-2 border-black bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
@@ -53,14 +54,16 @@ const Rooms = () => {
            
                   </div>
                 </div>
-              </a>
+              </div>
               <div className="mt-2">
-                  <p className="text-center text-2xl font-medium">Rack Rate: <span className="text-red-600">{item.price} BDT</span></p>
+                  <p className="text-center text-2xl font-medium">Rack Rate: <span className="text-red-600">{item.price} BDT Per Night</span></p>
                   <p className="text-xl font-medium">- Room size : {item.room_size}</p>
                   <p className="text-xl font-medium">- {item.amenities[0]}</p>
                   <p className="text-xl font-medium">- {item.amenities[1]}</p>
               </div>
              </div>
+             
+             </Link>
           )
       })
     }

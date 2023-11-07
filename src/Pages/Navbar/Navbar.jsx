@@ -1,7 +1,26 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../Firebase/AuthProvider";
 
 
 const Navbar = () => {
+  const {user,logOut} = useContext(AuthContext)
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        Swal.fire("Good job!", "Log Out Successfully!", "success");
+      })
+      .catch((error) => {
+        const ErrorMessage = error.message;
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+          footer: ErrorMessage,
+        });
+      });
+  };
     return (
       <div className="sticky top-0 z-50">
           <div className="max-w[1200px]  mx-auto">
@@ -68,11 +87,25 @@ const Navbar = () => {
                     Login
                   </NavLink>
                 </li>
+                <li>
+                  <NavLink
+                    to="/booking"
+                    className={({ isActive, isPending }) =>
+                      isPending
+                        ? "pending"
+                        : isActive
+                        ? "text-white bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-lg font-bold underline"
+                        : ""
+                    }
+                  >
+                    My Booking
+                  </NavLink>
+                </li>
         
       </ul>
     </div>
     <img className="h-14 w-14" src="https://i.ibb.co/fCPFdn9/sayeman-beach-resort-logo-final.png" alt="" />
-    <p className="md:ml-5 md:text-4xl font-bold">Sayeman Beach Resort</p>
+    <p className="md:ml-5 text-2xl md:text-3xl font-bold">Sayeman Beach Resort</p>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 mr-3">
@@ -133,12 +166,29 @@ const Navbar = () => {
                     Login
                   </NavLink>
                 </li>
+                <li>
+                  <NavLink
+                    to="/booking"
+                    className={({ isActive, isPending }) =>
+                      isPending
+                        ? "pending"
+                        : isActive
+                        ? "text-white bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-lg font-bold underline"
+                        : ""
+                    }
+                  >
+                    My Booking
+                  </NavLink>
+                </li>
    
     
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-white">Login</a>
+   {
+    user ? <a onClick={handleLogOut} className="btn bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-white">Logout</a> :
+    <a href="/login" className="btn bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-white">Login</a>
+   }
   </div>
 </div>
             
