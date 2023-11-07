@@ -1,10 +1,17 @@
 import { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Firebase/AuthProvider";
+import Swal from "sweetalert2";
+import Lottie from "lottie-react";
+import loadingAni from "../../assets/loadingAnimation.json"
 
 
 const Navbar = () => {
-  const {user,logOut} = useContext(AuthContext)
+  const {user,logOut,loading} = useContext(AuthContext)
+
+  if (loading) {
+    return <div className="flex justify-center items-center"><Lottie animationData={loadingAni}></Lottie></div>
+}
 
   const handleLogOut = () => {
     logOut()
@@ -59,7 +66,10 @@ const Navbar = () => {
                     Rooms
                   </NavLink>
                 </li>
-                <li>
+               {
+                user ? "" : (
+                  <div>
+                     <li>
                   <NavLink
                     to="/register"
                     className={({ isActive, isPending }) =>
@@ -73,7 +83,12 @@ const Navbar = () => {
                     Register
                   </NavLink>
                 </li>
-                <li>
+                  </div>
+                )
+               }
+               {
+                user ? "" : <div>
+                  <li>
                   <NavLink
                     to="/login"
                     className={({ isActive, isPending }) =>
@@ -87,6 +102,10 @@ const Navbar = () => {
                     Login
                   </NavLink>
                 </li>
+                </div>
+               }
+
+
                 <li>
                   <NavLink
                     to="/booking"
@@ -101,14 +120,28 @@ const Navbar = () => {
                     My Booking
                   </NavLink>
                 </li>
+
+                {
+                user ?  <button
+                className=" md:hidden btn bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-white font-medium"
+                onClick={handleLogOut}
+              >
+                Log Out
+              </button> : <></>
+              }
+
+
+            
+
+                
         
       </ul>
     </div>
     <img className="h-14 w-14" src="https://i.ibb.co/fCPFdn9/sayeman-beach-resort-logo-final.png" alt="" />
-    <p className="md:ml-5 text-2xl md:text-3xl font-bold">Sayeman Beach Resort</p>
+    <p className="md:ml-5 text-lg md:text-2xl lg:text-3xl font-bold">Sayeman Beach Resort</p>
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1 mr-3">
+    <ul className="menu menu-horizontal  mr-1">
 
     <li>
                   <NavLink
@@ -117,7 +150,7 @@ const Navbar = () => {
                       isPending
                         ? "pending"
                         : isActive
-                        ? "text-white bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-lg font-bold underline"
+                        ? "text-white bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-lg font-semibold"
                         : ""
                     }
                   >
@@ -131,14 +164,17 @@ const Navbar = () => {
                       isPending
                         ? "pending"
                         : isActive
-                        ? "text-white bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-lg font-bold underline"
+                        ? "text-white bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-lg font-bold"
                         : ""
                     }
                   >
                     Rooms
                   </NavLink>
                 </li>
-                <li>
+                {
+                user ? "" : (
+                  <div>
+                     <li>
                   <NavLink
                     to="/register"
                     className={({ isActive, isPending }) =>
@@ -152,7 +188,13 @@ const Navbar = () => {
                     Register
                   </NavLink>
                 </li>
-                <li>
+                
+                  </div>
+                )
+               }
+               {
+                user ? "" : <div>
+                  <li>
                   <NavLink
                     to="/login"
                     className={({ isActive, isPending }) =>
@@ -166,6 +208,8 @@ const Navbar = () => {
                     Login
                   </NavLink>
                 </li>
+                </div>  
+               }
                 <li>
                   <NavLink
                     to="/booking"
@@ -180,15 +224,43 @@ const Navbar = () => {
                     My Booking
                   </NavLink>
                 </li>
+                
    
     
     </ul>
   </div>
   <div className="navbar-end">
-   {
-    user ? <a onClick={handleLogOut} className="btn bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-white">Logout</a> :
-    <a href="/login" className="btn bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-white">Login</a>
-   }
+  {user ? (
+            <div className="flex gap-4 justify-center items-center">
+              <div className="flex   flex-col justify-center items-center">
+                <div className="w-12 h-12 rounded-full overflow-hidden">
+                  <img
+                    className="w-full h-full  object-cover"
+                    src={user.photoURL}
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <h3 className="text-xl  font-medium">{user.displayName}</h3>
+                </div>
+              </div>
+              <div>
+                <button
+                  className="hidden md:block lg:block btn bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-white font-medium"
+                  onClick={handleLogOut}
+                >
+                  Log Out
+                </button>
+              </div>
+            </div>
+          ) : (
+            <Link
+              className="btn bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-white font-medium"
+              to="/login"
+            >
+              log in
+            </Link>
+          )}
   </div>
 </div>
             

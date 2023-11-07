@@ -78,7 +78,16 @@ const RoomDetails = () => {
 
   </div>
 
-
+  <div>
+<div className="hero h-40 mt-10" style={{backgroundImage: `url(${image})`}}>
+<div className="hero-overlay bg-blue-950 bg-opacity-90"></div>
+<div className="hero-content text-center text-neutral-content">
+  <div className="max-w-md">
+    <button className="btn bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-white font-semibold  normal-case">Book Now</button>
+  </div>
+</div>
+</div>
+</div> 
   
 
 
