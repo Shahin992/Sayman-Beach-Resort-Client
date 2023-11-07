@@ -29,6 +29,46 @@ const RoomDetails = () => {
         <h3 className="text-3xl font-bold text-blue-950 my-2">{title}</h3>
         <p className="flex text-3xl"> <TbCurrencyTaka ></TbCurrencyTaka> Price: {price} BDT Per Night</p>
       </div>
+      <div className="text-center w-full lg:text-left max-w-[1280px] mx-auto">
+    
+      
+      
+    <div className=" lg:pl-40 my-8">
+     <p className="text-xl font-medium">{description}</p> 
+     </div>
+
+     <div>
+     
+      <div>
+    <Swiper
+      modules={[Navigation, Pagination, Autoplay]} 
+      navigation
+      pagination={{ clickable: true }}
+      scrollbar={{ draggable: true }}
+      autoplay={{ delay: 3000, disableOnInteraction: false }} 
+      onSwiper={(swiper) => console.log(swiper)}
+      onSlideChange={() => console.log('slide change')}
+    >
+      {
+          images.map(image=>(
+              <SwiperSlide>
+                  <img  className="w-full" src={image} alt="" />
+              </SwiperSlide>
+          ))
+      }
+    </Swiper>
+  </div>
+
+     
+    
+     </div>
+{/* amenities */}
+     
+
+
+  </div>
+
+
 
    
 
