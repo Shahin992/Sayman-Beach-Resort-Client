@@ -62,11 +62,25 @@ const RoomDetails = () => {
      
     
      </div>
-{/* amenities */}
+     <div>
+     <h3 className="text-3xl md:text-5xl font-bold text-blue-950 text-center my-8">Room Amenities</h3>
+    <div className="grid grid-cols-3 justify-between gap-10">
+    {
+      amenities.map(item =>(
+         <p className="flex text-3xl mb-2"> <FaLocationArrow className="mr-10 text-3xl"></FaLocationArrow>{item}</p>
+
+      ))
+     }
+    </div>
+     </div> 
      
 
 
   </div>
+
+
+  
+
 
 
 
