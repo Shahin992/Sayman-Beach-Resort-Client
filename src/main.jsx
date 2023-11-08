@@ -12,6 +12,7 @@ import AuthProvider from './Pages/Firebase/AuthProvider.jsx'
 import RoomDetails from './Pages/Rooms/RoomDetails.jsx'
 import Booked from './Pages/Firebase/Booked/Booked.jsx'
 import MyBookings from './Pages/MyBookings/MyBookings.jsx'
+import UpdateMyBooking from './Pages/UpdateBooking/UpdateMyBooking.jsx'
 
 const router = createBrowserRouter([
   {
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
         path :"/mybookings",
         element : <MyBookings></MyBookings>,
          
+      },
+      {
+        path :"/update/:id",
+        element : <UpdateMyBooking/>,
       }
     ],
     

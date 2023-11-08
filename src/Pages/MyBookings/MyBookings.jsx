@@ -5,6 +5,7 @@ import { AuthContext } from "../Firebase/AuthProvider";
 import Lottie from "lottie-react";
 import loadingAni from "../../assets/loadingAnimation.json"
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 
 const MyBookings = () => {
@@ -69,19 +70,30 @@ const MyBookings = () => {
             }
           });
         } else {
-          Swal.fire("Cannot delete", "You cannot delete this booking as it is less than 1 day in the future.", "error");
+          Swal.fire("Cannot delete", "You cannot delete this booking as it is less than 1 day.", "error");
         }
       } else {
         Swal.fire("Cannot delete", "The booking date is in the past.", "error");
       }
     };
+
+
+   
+
+
+
+
+
+
+
+
     return (
         <div className="my-10 max-w-7xl mx-auto">
            <div className="grid grid-cols-2 justify-between gap-10">
             {
                 bookingData.map(booked=>{
                     return (
-                        <div className="card md:card-side md:h-[350px] bg-base-100 shadow-xl">
+                        <div className="card md:card-side md:h-[430px] bg-base-100 shadow-xl">
                         <figure className="md:w-1/2">
                           <img className="h-full w-full" src={booked.image} alt="Album" />
                         </figure>
@@ -91,10 +103,13 @@ const MyBookings = () => {
                           <p className="text-2xl font-bold text-red-500 ">Date: 
                           {booked.date}</p>
                           <div className="card-actions my-1 justify-end">
-                            <button className="btn btn-outline btn-success">Update Reservesion</button>
-                            <button onClick={() => handleDelete(booked._id)}  className="btn btn-error">
+                          <Link to={`/update/${booked._id}`}>
+                          <button className="btn btn-outline w-[80%] normal-case text-white btn-success">Update Reservesion</button>
+                          </Link>
+                            <button onClick={() => handleDelete(booked._id)}  className="btn normal-case text-white w-[80%] btn-error">
                               Cancle Reservesion
                             </button>
+                            <button className="btn btn-outline normal-case text-white w-[80%] btn-success">Add Review</button>
                           </div>
                         </div>
                       </div>

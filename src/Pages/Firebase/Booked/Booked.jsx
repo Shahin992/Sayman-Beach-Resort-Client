@@ -67,7 +67,7 @@ const Booked = () => {
         
         setdate(null)
 
-        navigate('/')
+        navigate('/rooms')
         
 
        
