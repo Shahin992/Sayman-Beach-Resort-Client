@@ -10,6 +10,9 @@ import Login from './Pages/Login/Login.jsx'
 import Register from './Pages/Register/Register.jsx'
 import AuthProvider from './Pages/Firebase/AuthProvider.jsx'
 import RoomDetails from './Pages/Rooms/RoomDetails.jsx'
+import Booked from './Pages/Firebase/Booked/Booked.jsx'
+import MyBookings from './Pages/MyBookings/MyBookings.jsx'
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -33,12 +36,24 @@ const router = createBrowserRouter([
 
       },
       {
+        path :"/rooms/booking/:id",
+        element : <Booked></Booked>,
+        loader: ({params})=> fetch(`http://localhost:5000/rooms/${params.id}`)
+
+
+      },
+      {
         path: "/login",
         element: <Login></Login>
       },
       {
         path :"/register",
         element: <Register></Register>
+      },
+      {
+        path :"/mybookings",
+        element : <MyBookings></MyBookings>,
+         
       }
     ],
     

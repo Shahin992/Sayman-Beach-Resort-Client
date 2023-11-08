@@ -108,7 +108,7 @@ const Navbar = () => {
 
                 <li>
                   <NavLink
-                    to="/booking"
+                    to="/mybookings"
                     className={({ isActive, isPending }) =>
                       isPending
                         ? "pending"
@@ -212,7 +212,7 @@ const Navbar = () => {
                }
                 <li>
                   <NavLink
-                    to="/booking"
+                    to="/mybookings"
                     className={({ isActive, isPending }) =>
                       isPending
                         ? "pending"

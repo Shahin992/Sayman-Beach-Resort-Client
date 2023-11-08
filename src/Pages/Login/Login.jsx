@@ -38,7 +38,7 @@ const Login = () => {
     githubLogin()
       .then((result) => {
         console.log(result.user);
-        fetch("https://server-site-taupe.vercel.app/users", {
+        fetch("localhost5000/users", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
