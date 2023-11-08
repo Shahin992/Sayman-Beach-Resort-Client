@@ -14,12 +14,13 @@ import Booked from './Pages/Firebase/Booked/Booked.jsx'
 import MyBookings from './Pages/MyBookings/MyBookings.jsx'
 import UpdateMyBooking from './Pages/UpdateBooking/UpdateMyBooking.jsx'
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute.jsx'
+import ErrorPage from './Pages/ErrorPage/Errorpage.jsx'
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
-    // errorElement: <ErrorPage></ErrorPage>,
+     errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
