@@ -1,10 +1,27 @@
 /* eslint-disable react/jsx-key */
 import { Link, useLoaderData } from "react-router-dom";
 import PageTitle from "../Pagetitle/PageTitle";
+import { useEffect, useState } from "react";
 
 const Rooms = () => {
-    const roomData = useLoaderData();
-    console.log(roomData);
+    // const roomData = useLoaderData();
+    // console.log(roomData);
+
+    const [roomData, setRoomData] = useState([]);
+  const [sortingOption, setSortingOption] = useState("desc")
+
+  useEffect(() => {
+    // Define the URL with dynamic query parameters
+    const url = `http://localhost:5000/rooms?sortfield=price&sortorder=${sortingOption}`;
+
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => setRoomData(data))
+      .catch((error) => console.error("Error:", error));
+  }, [sortingOption]);
+
+
+
   return (
     
     <div>
@@ -27,12 +44,17 @@ const Rooms = () => {
       
       <div className="flex justify-end items-end mt-10">
           <p className="text-2xl font-semibold text-blue-950">Sort by Price: </p>
-          <select id="sortSelect">
-
-      <option >Sort Select</option>
-      <option >Low to High</option>
-      <option >High to Low</option>
-    </select>
+          <div>
+        <label>
+          <select
+            value={sortingOption}
+            onChange={(e) => setSortingOption(e.target.value)}
+          >
+            <option value="asc">Low to High</option>
+            <option value="desc">High to Low</option>
+          </select>
+        </label>
+      </div>
           
       </div>
     <div className="grid grid-cols-1 lg:grid-cols-2  items-center gap-16 justify-center my-10 ">

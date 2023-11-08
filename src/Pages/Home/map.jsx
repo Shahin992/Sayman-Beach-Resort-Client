@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const Map = () => {
     const [todo,setTodo] = useState([])
     useEffect(() =>{
-        fetch('/Things.json')
+        fetch('http://localhost:5000/things')
       .then(res => res.json())
       .then(data => setTodo(data))
     },[])

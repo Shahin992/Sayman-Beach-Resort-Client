@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const SpecialOffer = () => {
     const [offer,setOffer] = useState([])
     useEffect(() =>{
-        fetch('/SpecialOffer.json')
+        fetch('http://localhost:5000/offers')
       .then(res => res.json())
       .then(data => setOffer(data))
     },[])
