@@ -6,6 +6,7 @@ import loginanimation from "../../assets/loginAnimation.json"
 import { useContext } from "react";
 import { AuthContext } from "../Firebase/AuthProvider";
 import Swal from "sweetalert2";
+import PageTitle from "../Pagetitle/PageTitle";
 
 
 const Login = () => {
@@ -65,6 +66,7 @@ const Login = () => {
 
     return (
         <div>
+          <PageTitle title={'Login'}/>
              <div>
       <div className="flex flex-col mt-10 justify-center items-center"></div>
       <div className="p-4 my-10 flex md:flex-row flex-col">

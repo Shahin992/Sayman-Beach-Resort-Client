@@ -4,6 +4,7 @@ import { AuthContext } from "../AuthProvider";
 import Lottie from "lottie-react";
 import loadingAni from "../../../assets/loadingAnimation.json"
 import Swal from "sweetalert2";
+import PageTitle from "../../Pagetitle/PageTitle";
 
 const Booked = () => {
     
@@ -80,6 +81,7 @@ const Booked = () => {
     const {image,price,title} =roomData
     return (
         <div>
+          <PageTitle title={'Room Booked'}/>
 
 <div className="card w-1/2 mx-auto bg-base-100 shadow-xl">
   <figure><img className="h-80 w-full" src={image} alt="Shoes" /></figure>

@@ -13,6 +13,7 @@ import RoomDetails from './Pages/Rooms/RoomDetails.jsx'
 import Booked from './Pages/Firebase/Booked/Booked.jsx'
 import MyBookings from './Pages/MyBookings/MyBookings.jsx'
 import UpdateMyBooking from './Pages/UpdateBooking/UpdateMyBooking.jsx'
+import PrivateRoute from './Pages/PrivateRoute/PrivateRoute.jsx'
 
 const router = createBrowserRouter([
   {
@@ -53,7 +54,7 @@ const router = createBrowserRouter([
       },
       {
         path :"/mybookings",
-        element : <MyBookings></MyBookings>,
+        element : <PrivateRoute><MyBookings></MyBookings></PrivateRoute>,
          
       },
       {

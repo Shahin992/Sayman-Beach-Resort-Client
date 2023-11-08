@@ -6,6 +6,8 @@ import Lottie from "lottie-react";
 import loadingAni from "../../assets/loadingAnimation.json"
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import nodata from "../../assets/Nodata.json"
+import PageTitle from "../Pagetitle/PageTitle";
 
 
 const MyBookings = () => {
@@ -17,7 +19,9 @@ const MyBookings = () => {
     const email = user.email
     const [bookingData,setBookingData] = useState([]);
     useEffect(()=>{
-        fetch(`http://localhost:5000/bookings/${email}`)
+        fetch(`http://localhost:5000/bookings/${email}`, {
+          credentials : "include"
+        })
         .then(response => response.json())
         .then(data =>{
             setBookingData(data)
@@ -89,7 +93,22 @@ const MyBookings = () => {
 
     return (
         <div className="my-10 max-w-7xl mx-auto">
-           <div className="grid grid-cols-2 justify-between gap-10">
+          <PageTitle title={'My Booking'}/>
+          {
+            bookingData.length === 0 ? <div> 
+
+
+              <div>
+                <Lottie className="h-80" animationData={nodata}></Lottie>
+                <h3 className="text-3xl md:text-5xl font-bold text-blue-950 text-center mt-3">No Data Found</h3>
+              </div>
+
+
+            </div>
+
+            :
+            <div>
+               <div className="grid grid-cols-2 justify-between gap-10">
             {
                 bookingData.map(booked=>{
                     return (
@@ -104,7 +123,7 @@ const MyBookings = () => {
                           {booked.date}</p>
                           <div className="card-actions my-1 justify-end">
                           <Link to={`/update/${booked._id}`}>
-                          <button className="btn btn-outline w-[80%] normal-case text-white btn-success">Update Reservesion</button>
+                          <button className="btn btn-outline w-full normal-case text-white btn-success">Update Reservesion</button>
                           </Link>
                             <button onClick={() => handleDelete(booked._id)}  className="btn normal-case text-white w-[80%] btn-error">
                               Cancle Reservesion
@@ -117,6 +136,8 @@ const MyBookings = () => {
                 })
             }
            </div>
+            </div>
+          }
             
         </div>
     );

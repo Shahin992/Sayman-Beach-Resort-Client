@@ -9,6 +9,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
 import Swal from "sweetalert2";
+import PageTitle from "../Pagetitle/PageTitle";
 
 
 
@@ -31,6 +32,7 @@ const RoomDetails = () => {
 
 
         <div>
+          <PageTitle title={'Room Detail'}/>
             <div className="hero min-h-screen">
   <div className="  flex-col w-full">
   <img className=" w-full h-[500px]" src={image} alt="" />

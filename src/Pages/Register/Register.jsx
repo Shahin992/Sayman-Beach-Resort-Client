@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { AuthContext } from "../Firebase/AuthProvider";
 import Swal from "sweetalert2";
 import { updateProfile } from "firebase/auth";
+import PageTitle from "../Pagetitle/PageTitle";
 
 const Register = () => {
     const {  googleLogin,createUser,githubLogin } = useContext(AuthContext);
@@ -119,6 +120,7 @@ const Register = () => {
 
     return (
         <div>
+          <PageTitle title={'Register'}></PageTitle>
     
 <section className="bg-white">
   <div className="lg:grid lg:min-h-screen lg:grid-cols-12">

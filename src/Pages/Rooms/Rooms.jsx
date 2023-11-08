@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-key */
 import { Link, useLoaderData } from "react-router-dom";
+import PageTitle from "../Pagetitle/PageTitle";
 
 const Rooms = () => {
     const roomData = useLoaderData();
@@ -7,6 +8,7 @@ const Rooms = () => {
   return (
     
     <div>
+      <PageTitle title={'Rooms'}/>
         <div className="hero min-h-screen" style={{backgroundImage: 'url(https://seagullhotelbd.com/wp-content/uploads/2023/10/New-web-pic-for-seagull-3-min.png)'}}>
   <div className="hero-content bg-opacity-10"></div>
   <div className="">

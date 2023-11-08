@@ -1,9 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Firebase/AuthProvider";
-import { Link, useLoaderData, useNavigate, useParams } from "react-router-dom";
+import { Link, useLoaderData, useNavigate, useNavigation, useParams } from "react-router-dom";
 import Lottie from "lottie-react";
 import loadingAni from "../../assets/loadingAnimation.json"
 import Swal from "sweetalert2";
+import PageTitle from "../Pagetitle/PageTitle";
 
 
 const UpdateMyBooking = () => {
@@ -25,6 +26,7 @@ const UpdateMyBooking = () => {
      const updateBooking = bookings.find(item => item._id == id)
 
      const [date,setDate] = useState([])
+     const navigate = useNavigation();
     
     
 
@@ -58,7 +60,7 @@ const UpdateMyBooking = () => {
         console.log(data)
         if (data.modifiedCount > 0) {
           Swal.fire("Good job!", "Booking Date Updated Successfully!", "success");
-          window.history.go(-1);
+          navigate ('/mybooking')
         }
       }
       
@@ -71,6 +73,7 @@ const UpdateMyBooking = () => {
   
     return (
         <div >
+            <PageTitle title={'Update'}/>
 
 
 <div className="card w-1/2 my-10 mx-auto bg-base-100 shadow-xl">
