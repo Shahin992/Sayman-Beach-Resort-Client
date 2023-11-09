@@ -22,9 +22,7 @@ const MyBookings = () => {
   const email = user.email;
   const [bookingData, setBookingData] = useState([]);
   useEffect(() => {
-    fetch(`https://sayeman-hotel-server.vercel.app/bookings/${email}`, {
-      credentials: "include",
-    })
+    fetch(`https://sayeman-hotel-server.vercel.app/bookings/${email}`)
       .then((response) => response.json())
       .then((data) => {
         setBookingData(data);
@@ -34,7 +32,7 @@ const MyBookings = () => {
   console.log(bookingData);
 
   const handleDelete = (id) => {
-    const bookingToDelete = bookingData.find((booking) => booking._id === id);
+    const bookingToDelete = bookingData?.find((booking) => booking._id === id);
 
     if (!bookingToDelete) {
       return;
@@ -100,7 +98,7 @@ const MyBookings = () => {
         </div>
       ) : (
         <div>
-           <h3 className="text-3xl md:text-5xl my-10 font-bold text-blue-950 text-center mt-3">
+          <h3 className="text-3xl md:text-5xl my-10 font-bold text-blue-950 text-center mt-3">
             My Bookings
           </h3>
           <div className="grid grid-cols-1 lg:grid-cols-2 justify-between gap-10">
@@ -125,25 +123,23 @@ const MyBookings = () => {
                       Date:
                       {booked.date}
                     </p>
-                    <div className="card-actions flex  flex-col my-1 justify-end">
+                    <div className="card-actions flex w-60 flex-col my-1 justify-end">
                       <Link to={`/update/${booked._id}`}>
-                        <button className="btn btn-outline w-full normal-case text-white  btn-success">
+                        <button className="btn btn-outline w-60 normal-case text-white  btn-success">
                           Update Reservesion
                         </button>
                       </Link>
                       <button
                         onClick={() => handleDelete(booked._id)}
-                        className="btn w-full normal-case text-white  btn-error"
+                        className="btn w-60 normal-case text-white  btn-error"
                       >
                         Cancle Reservesion
                       </button>
                       <Link to={`/mybookings/review/${booked._id}`}>
-                      <button className="btn btn-outline w-full normal-case text-white  btn-success">
-                        Add Review
-                      </button>
-                      
+                        <button className="btn btn-outline w-60 normal-case text-white  btn-success">
+                          Add Review
+                        </button>
                       </Link>
-                      
                     </div>
                   </div>
                 </div>

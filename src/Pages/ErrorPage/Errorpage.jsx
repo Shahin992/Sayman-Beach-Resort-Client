@@ -1,10 +1,15 @@
 import Lottie from "lottie-react";
-import { useRouteError } from "react-router-dom";
+import { useNavigate, useRouteError } from "react-router-dom";
 import four from "../../assets/404.json"
 
 export default function ErrorPage() {
   const error = useRouteError();
+  const navigate = useNavigate();
   console.error(error);
+
+  const navigateToHome = () => {
+    navigate("/");
+  };
 
   return (
     <div className="flex justify-center text-center  items-center mt-10 md:mt-20" id="error-page">
@@ -15,6 +20,13 @@ export default function ErrorPage() {
         <p>
           <i className="text-2xl md:text-4xl">{error.statusText || error.message}</i>
         </p>
+
+        <button
+          className="btn bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-white"
+          onClick={navigateToHome}
+        >
+          Back to Home
+        </button>
       </div>
     </div>
   );
