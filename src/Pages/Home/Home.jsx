@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-key */
 
 import PageTitle from "../Pagetitle/PageTitle";
+
 import Slider from "./Slider";
 import SpecialOffer from "./SpecialOffer";
 import Map from "./map";
